@@ -2,11 +2,27 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import pickle
+from sklearn.neighbors import KNeighborsClassifier
+import os
+import sys
+
+def resource_path(relative_path):
+    """Obtient le chemin absolu vers la ressource, compatible avec PyInstaller."""
+    try:
+        # PyInstaller extrait les ressources dans un dossier temporaire _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 class HandDetector:
     def __init__(self, model_path="hand_landmarker.task", pickle_filename="gesture_model.pkl"):
+        # Résoudre les chemins compatibles avec la compilation
+        resolved_model_path = resource_path(model_path)
+        resolved_pickle_path = resource_path(pickle_filename)
+
         # Configurer le détecteur de mains
-        base_options = python.BaseOptions(model_asset_path=model_path)
+        base_options = python.BaseOptions(model_asset_path=resolved_model_path)
         options = vision.HandLandmarkerOptions(
             base_options=base_options,
             running_mode=vision.RunningMode.VIDEO,
@@ -15,7 +31,7 @@ class HandDetector:
         # Créer l'instance du détecteur
         self.detector = vision.HandLandmarker.create_from_options(options)
 
-        with open(pickle_filename, 'rb') as f:
+        with open(resolved_pickle_path, 'rb') as f:
             self.model = pickle.load(f)
 
     def detect(self, frame_rgb, timestamp_ms):

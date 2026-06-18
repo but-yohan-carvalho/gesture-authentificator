@@ -17,3 +17,7 @@ env/
 
 # Large model task (MediaPipe)
 hand_landmarker.task
+
+# PyInstaller build artifacts
+build/
+dist/

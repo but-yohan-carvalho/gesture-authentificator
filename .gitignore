@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE configurations
+.vscode/
+.idea/
+
+# Large model task (MediaPipe)
+hand_landmarker.task

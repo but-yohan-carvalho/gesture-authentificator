@@ -49,9 +49,16 @@ def main():
         # Détecter la main
         landmarks = detector.detect(rgb_frame, timestamp_ms)
 
-        # Si une main est détectée, on la dessine
+        # Si une main est détectée, on la dessine et on prédit le geste
         if landmarks:
             draw_hand(frame, landmarks)
+            gesture = detector.predict_gesture(landmarks)
+            
+            # Afficher le geste prédit à l'écran
+            if gesture:
+                cv2.putText(frame, f"Geste: {gesture.upper()}", (10, 50), 
+                            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
+
 
         cv2.imshow("Gesture Authenticator", frame)
 

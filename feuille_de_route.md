@@ -19,20 +19,20 @@ Ce document sert de fil conducteur pour le développement pas à pas de votre sy
 
 ---
 
-### 🟨 Étape 2 : Reconnaissance de Gestes par Machine Learning (En cours)
+### 🟩 Étape 2 : Reconnaissance de Gestes par Machine Learning (Terminée)
 * **Objectif** : Enregistrer un jeu de données de gestes, entraîner un modèle de classification (ex: KNN avec Scikit-Learn), et l'utiliser pour prédire les gestes en temps réel.
 * **Fichiers concernés** :
   * [collect_data.py](file:///c:/Users/Yohan/projets_persos/gesture-authentificator/collect_data.py) [NEW] (Enregistrement des positions de mains pour créer notre dataset)
   * [train_model.py](file:///c:/Users/Yohan/projets_persos/gesture-authentificator/train_model.py) [NEW] (Entraînement et sauvegarde du modèle)
   * Modification de [detector.py](file:///c:/Users/Yohan/projets_persos/gesture-authentificator/detector.py) (Chargement du modèle et prédiction en temps réel)
-* **🧠 Compétences à acquérir** :
+* **🧠 Compétences acquises** :
   * Créer et formater un jeu de données (dataset) à partir de flux vidéo.
-  * Utiliser **Scikit-Learn** pour entraîner un modèle de classification de données tabulaires.
-  * Sauvegarder et charger un modèle d'IA en production (sérialisation).
+  * Utiliser **Scikit-Learn** pour entraîner un modèle de classification de données tabulaires (KNN).
+  * Sauvegarder et charger un modèle d'IA en production (sérialisation avec pickle).
 
 ---
 
-### ⬜ Étape 3 : Gestion de la Séquence (Le "Mot de passe")
+### 🟨 Étape 3 : Gestion de la Séquence (Le "Mot de passe") (En cours)
 * **Objectif** : Mettre en place un système qui valide une combinaison de gestes dans un ordre précis (ex: `[POING, V, MAIN_OUVERTE]`) avec une temporisation (l'utilisateur doit maintenir le geste 1.5 seconde pour le valider).
 * **🧠 Compétences à acquérir** :
   * Concevoir une **machine à états finis** (Finite State Machine) en Python.

@@ -53,3 +53,13 @@ Ce document sert de fil conducteur pour le développement pas à pas de votre sy
 * **🧠 Compétences à acquérir** :
   * Maîtriser le dessin avancé sur OpenCV (cercles, rectangles de progression, polices).
   * Améliorer l'expérience utilisateur (UX) dans une application de vision par ordinateur.
+
+---
+
+### ⬜ Étape 6 : Empaquetage & Création d'un Exécutable (.exe)
+* **Objectif** : Transformer votre code Python en un logiciel autonome (un fichier `.exe` exécutable) utilisable en un double-clic, sans nécessiter d'installer Python ou les dépendances manuellement sur l'ordinateur cible.
+* **🧠 Compétences à acquérir** :
+  * Configurer et utiliser des outils de packaging Python comme **PyInstaller**.
+  * Intégrer les fichiers de ressources (comme les fichiers `.pkl` du modèle de gestes) au sein du binaire final.
+  * Créer un lanceur indépendant et éventuellement un installateur.
+
